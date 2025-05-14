@@ -15,17 +15,79 @@
       <a href="resources.html">Ресурсы</a>
     </nav>
   </header>
+  
+  <!-- Кнопка переключения темы -->
+  <button class="theme-toggle">Переключить тему</button>
+  
   <main>
     <section>
       <h2>Аннотация</h2>
       <p>
         В рамках проектной практики первого курса был разработан информационный сайт, демонстрирующий основы верстки, использования Git и создания статических веб-страниц.
       </p>
-      <img src="images/screenshot.png" alt="Скриншот сайта" width="500">
+    </section>
+
+    <section>
+      <h2>Техническая реализация</h2>
+      <p>
+        Центральным этапом проекта стала техническая реализация (вариативная часть проекта) — создание Telegram-бота.
+      </p>
+      <p>
+        <strong>Telegram Horoscope Bot</strong> — это Telegram-бот, предназначенный для получения гороскопов по знаку зодиака. Пользователи могут выбрать свой знак, указать интересующую дату и получить персональный гороскоп с переводом на русский язык.
+      </p>
+      <p>
+        Бот использует внешний API для получения актуальных астрологических данных и переводит тексты с английского на русский через MyMemory API.
+      </p>
+      <h3>Основные функции</h3>
+      <ul>
+        <li><strong>/start</strong> — запуск и приветствие</li>
+        <li><strong>/помощь</strong> или <strong>Помощь</strong> — справка по функциям бота</li>
+        <li><strong>/гороскоп</strong> или <strong>Гороскоп</strong> — начать выбор знака зодиака и даты</li>
+      </ul>
+
+      <h3>Логика диалога</h3>
+      <ol>
+        <li>Пользователь нажимает «Гороскоп» или отправляет команду <strong>/гороскоп</strong>.</li>
+        <li>Бот предлагает выбрать знак зодиака.</li>
+        <li>Затем предлагает указать день: <em>сегодня</em>, <em>завтра</em>, <em>вчера</em> или вручную дату в формате <code>ГГГГ-ММ-ДД</code>.</li>
+      </ol>
     </section>
   </main>
+  
   <footer>
     <p>&copy; 2025, Студенты группы 241-362</p>
   </footer>
+
+  <script>
+    // Переключение темы
+    const toggleButton = document.querySelector('.theme-toggle');
+    const body = document.body;
+    const header = document.querySelector('header');
+    const main = document.querySelector('main');
+    const footer = document.querySelector('footer');
+
+    // Проверка сохранённой темы
+    if (localStorage.getItem('theme') === 'night') {
+        body.classList.add('night');
+        header.classList.add('night');
+        main.classList.add('night');
+        footer.classList.add('night');
+    }
+
+    // Обработчик события для кнопки переключения темы
+    toggleButton.addEventListener('click', () => {
+        body.classList.toggle('night');
+        header.classList.toggle('night');
+        main.classList.toggle('night');
+        footer.classList.toggle('night');
+
+        // Сохраняем выбранную тему в localStorage
+        if (body.classList.contains('night')) {
+            localStorage.setItem('theme', 'night');
+        } else {
+            localStorage.removeItem('theme');
+        }
+    });
+  </script>
 </body>
 </html>

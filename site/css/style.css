@@ -1,35 +1,68 @@
+/* Основные стили для дневной темы */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f3f3f3;
-    color: #333;
-  }
-  
-  header {
-    background-color: #b46d93;
-    color: white;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  nav a {
-    margin: 0 15px;
-    color: white;
-    text-decoration: none;
-  }
-  
-  main {
-    padding: 20px;
-    background-color: white;
-    margin: 20px;
-    border-radius: 10px;
-  }
-  
-  footer {
-    text-align: center;
-    font-size: 0.9em;
-    color: gray;
-    padding: 10px;
-  }
-  
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f3f3f3;
+  color: #333;
+}
+
+header {
+  background-color: #b46d93;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+nav a {
+  margin: 0 15px;
+  color: white;
+  text-decoration: none;
+}
+
+main {
+  padding: 20px;
+  background-color: white;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.9em;
+  color: gray;
+  padding: 10px;
+}
+
+/* Стили для ночной темы */
+body.night {
+  background-color: #2c3e50;
+  color: white;
+}
+
+header.night {
+  background-color: #34495e;
+}
+
+main.night {
+  background-color: #34495e;
+  color: white;
+}
+
+footer.night {
+  color: white;
+}
+
+/* Кнопка для переключения темы */
+button.theme-toggle {
+  background-color: #b46d93;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button.theme-toggle:hover {
+  background-color: #9c557d;
+} 
