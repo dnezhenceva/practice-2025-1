@@ -14,6 +14,8 @@
 
 # Вариативная часть задания
 
+Python: Как создать Telegram-бота с помощью Python
+https://www.freecodecamp.org/news/how-to-create-a-telegram-bot-using-python/
 
 # Ответственный по проектной (учебной) практике
 
